@@ -131,8 +131,8 @@ alex@/tmp/binary_trees$
 ```
 Repo:
 
-> GitHub repository: binary_trees
-> File: 0-binary_tree_node.c
+ - GitHub repository: binary_trees
+ - File: 0-binary_tree_node.c
 
 
 ### 1. Insert left
@@ -181,8 +181,8 @@ alex@/tmp/binary_trees$
 ```
 Repo:
 
-> GitHub repository: binary_trees
-> File: 1-binary_tree_insert_left.c
+ - GitHub repository: binary_trees
+ - File: 1-binary_tree_insert_left.c
 
 ### 2. Insert right
 
@@ -230,8 +230,8 @@ alex@/tmp/binary_trees$
 ```
 Repo:
 
-> GitHub repository: binary_trees
-> File: 2-binary_tree_insert_right.c
+ - GitHub repository: binary_trees
+ - File: 2-binary_tree_insert_right.c
 
 ### 3. Delete
 
@@ -287,8 +287,8 @@ alex@/tmp/binary_trees$
 ```
 Repo:
 
-> GitHub repository: binary_trees
-> File: 3-binary_tree_delete.c
+ - GitHub repository: binary_trees
+ - File: 3-binary_tree_delete.c
 
 ### 4. Is leaf
 
@@ -341,8 +341,8 @@ alex@/tmp/binary_trees$
 ```
 Repo:
 
-> GitHub repository: binary_trees
-> File: 4-binary_tree_is_leaf.c
+ - GitHub repository: binary_trees
+ - File: 4-binary_tree_is_leaf.c
 
 
 ### 5. Is root
@@ -396,8 +396,8 @@ alex@/tmp/binary_trees$
 ```
 Repo:
 
-> GitHub repository: binary_trees
-> File: 5-binary_tree_is_root.c
+ - GitHub repository: binary_trees
+ - File: 5-binary_tree_is_root.c
 
 
 ### 6. Pre-order traversal
@@ -461,8 +461,8 @@ alex@/tmp/binary_trees$
 ```
 Repo:
 
-> GitHub repository: binary_trees
-> File: 6-binary_tree_preorder.c
+ - GitHub repository: binary_trees
+ - File: 6-binary_tree_preorder.c
 
 ### 7. In-order traversal
 
