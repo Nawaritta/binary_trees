@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_size - measures the size of a binary tree
+ * binary_size - measures the size of a binary tree
  *
  * @tree: tree
  *
@@ -10,9 +10,9 @@
 
 size_t binary_size(const binary_tree_t *tree)
 {
-		if (tree == NULL)
-				return (0);
-		return (binary_size(tree->right) + 1 + binary_size(tree->left));
+	if (tree == NULL)
+		return (0);
+	return (binary_size(tree->right) + 1 + binary_size(tree->left));
 }
 
 /**
@@ -31,5 +31,5 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 	l = binary_size(tree);
-	return (l & (l + 1)) == 0;
+	return ((l & (l + 1)) == 0);
 }
