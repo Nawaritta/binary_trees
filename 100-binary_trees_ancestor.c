@@ -30,10 +30,10 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	while (up)
 	{
 		down = DOWN;
-		while (down->parent)
+		while (down)
 		{
-			if (up == down->parent)
-				return (down->parent);
+			if (up == down)
+				return ((binary_tree_t *)down);
 			down = down->parent;
 		}
 		up = up->parent;
