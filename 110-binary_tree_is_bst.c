@@ -1,16 +1,19 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_preorder_next - returns the next node to visit in
+ * subtree_trav_next - returns the next node to visit in
  *                            pre-order traversal
  * @node: a pointer to the current node
+ * @subroot: a pointer to the root node of the subtree
  * Return: a pointer to the next node to visit,
- *        or NULL if the traversal is complete
- *
+ *         or NULL if the traversal is complete
  */
-binary_tree_t *binary_tree_preorder_next(const binary_tree_t *node)
+binary_tree_t *subtree_trav_next(const binary_tree_t *node,
+				 const binary_tree_t *subroot)
 {
-	if (node == NULL)
+	binary_tree_t *tmp;
+
+	if (node == NULL || subroot == NULL)
 		return (NULL);
 
 	if (node->left != NULL)
@@ -22,9 +25,19 @@ binary_tree_t *binary_tree_preorder_next(const binary_tree_t *node)
 	while (node->parent != NULL)
 	{
 		if (node == node->parent->left && node->parent->right != NULL)
-			return (node->parent->right);
+		{
+			tmp = node->parent->right;
+			while (tmp)
+			{
+				if (tmp == subroot)
+					return (node->parent->right);
+				tmp = tmp->parent;
+			}
+			return (NULL);
+		}
 		node = node->parent;
 	}
+
 	return (NULL);
 }
 /**
@@ -37,10 +50,11 @@ binary_tree_t *binary_tree_preorder_next(const binary_tree_t *node)
 
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-	const binary_tree_t *sub;
+	const binary_tree_t *sub, *root;
 
 	if (tree == NULL)
 		return (0);
+	root = tree;
 	while (tree != NULL)
 	{
 		if (tree->left)
@@ -50,12 +64,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 			{
 				if (sub->n > tree->n)
 					return (0);
-				sub = binary_tree_preorder_next(sub);
-				if (tree->parent)
-					if (sub == tree->parent->right)
-						break;
-				if (sub == tree->right)
-					break;
+				sub = subtree_trav_next(sub, tree->left);
 			}
 		}
 		if (tree->right)
@@ -65,10 +74,10 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 			{
 				if (sub->n < tree->n)
 					return (0);
-				sub = binary_tree_preorder_next(sub);
+				sub = subtree_trav_next(sub, tree->right);
 			}
 		}
-		tree = binary_tree_preorder_next(tree);
+		tree = subtree_trav_next(tree, root);
 	}
 	return (1);
 }
