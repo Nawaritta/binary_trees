@@ -62,7 +62,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 			sub = tree->left;
 			while (sub)
 			{
-				if (sub->n > tree->n)
+				if (sub->n >= tree->n)
 					return (0);
 				sub = subtree_trav_next(sub, tree->left);
 			}
@@ -72,7 +72,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 			sub = tree->right;
 			while (sub)
 			{
-				if (sub->n < tree->n)
+				if (sub->n <= tree->n)
 					return (0);
 				sub = subtree_trav_next(sub, tree->right);
 			}
