@@ -15,7 +15,7 @@ bst_t *bst_search(const bst_t *tree, int value)
 	if (!tree)
 		return (NULL);
 
-	tmp = tree;
+	tmp = (bst_t *)tree;
 
 	while (tmp)
 	{
